@@ -59,3 +59,21 @@ class EKSClusterInfo:
             self.tag_subnets(cluster_info['subnet_ids'])
         else:
             print("Failed to retrieve cluster information.")
+
+# Import the EKSClusterInfo class from eks_cluster_info
+from eks_cluster_info import EKSClusterInfo
+
+def main():
+    # Example usage of the EKSClusterInfo class
+    cluster_name = 'my-eks-cluster'
+    region = 'us-west-2'
+
+    # Create an instance of EKSClusterInfo
+    cluster_info = EKSClusterInfo(cluster_name=cluster_name, region=region)
+    
+    # Process the cluster (retrieve info, tag resources)
+    cluster_info.process_cluster()
+
+if __name__ == '__main__':
+    main()
+
